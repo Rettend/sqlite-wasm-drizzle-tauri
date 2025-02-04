@@ -1,0 +1,36 @@
+{
+  "name": "sqlite-wasm-drizzle-tauri",
+  "type": "module",
+  "private": true,
+  "packageManager": "bun@1.2.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "prebuild": "bun ./scripts/compile-migrations.ts",
+    "dev": "bun run prebuild && vinxi dev",
+    "build": "vinxi build",
+    "preview": "bun .output/server/index.mjs",
+    "lint": "eslint . --fix"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.15.3",
+    "@solidjs/start": "^1.0.11",
+    "drizzle-orm": "^0.39.0",
+    "solid-js": "^1.9.4",
+    "sqlocal": "^0.13.0",
+    "vinxi": "^0.5.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.1.0",
+    "@types/bun": "^1.2.1",
+    "@types/node": "^22.12.0",
+    "@unocss/eslint-plugin": "^65.4.3",
+    "drizzle-kit": "^0.30.3",
+    "eslint": "^9.19.0",
+    "eslint-plugin-solid": "^0.14.5"
+  },
+  "overrides": {
+    "vite": "5.4.10"
+  }
+}
