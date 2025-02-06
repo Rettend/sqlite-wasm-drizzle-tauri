@@ -10,6 +10,7 @@
     "prebuild": "bun ./scripts/compile-migrations.ts",
     "dev": "bun run prebuild && vinxi dev",
     "build": "vinxi build",
+    "db:generate": "drizzle-kit generate",
     "preview": "bun .output/server/index.mjs",
     "lint": "eslint . --fix"
   },
