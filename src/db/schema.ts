@@ -3,7 +3,7 @@ import * as s from 'drizzle-orm/sqlite-core'
 export const users = s.sqliteTable('users', {
   id: s.text('id')
     .primaryKey()
-    .$defaultFn(() => uuid()),
+    .$defaultFn(() => uuidBase64url()),
   username: s.text().default('').notNull(),
   password: s.text().default('').notNull(),
 })
@@ -11,7 +11,7 @@ export const users = s.sqliteTable('users', {
 export type User = typeof users.$inferSelect
 export type UserNew = typeof users.$inferInsert
 
-function uuid(): string {
+function uuidBase64url(): string {
   const bytes = new Uint8Array(16)
   crypto.getRandomValues(bytes)
 
