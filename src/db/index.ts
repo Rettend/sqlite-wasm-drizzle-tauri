@@ -29,7 +29,7 @@ for (const migration of migrations) {
     console.log(`Applying migration: ${migration.tag}`)
 
     for (const statement of migration.sql)
-      await sql`${statement}`
+      await sql(statement)
 
     await sql`
       INSERT INTO __drizzle_migrations (hash, created_at, tag)
