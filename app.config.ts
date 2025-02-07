@@ -6,14 +6,12 @@ const host = process.env.TAURI_DEV_HOST
 export default defineConfig({
   ssr: false,
   server: {
-    preset: 'static',
     routeRules: {
       '/**': { headers: { 'Cross-Origin-Embedder-Policy': 'require-corp', 'Cross-Origin-Opener-Policy': 'same-origin' } },
     },
   },
   vite: {
     server: {
-      clearScreen: false,
       port: 3000,
       strictPort: true,
       host: host || false,
