@@ -8,7 +8,7 @@
   },
   "scripts": {
     "prebuild": "bun ./scripts/compile-migrations.ts",
-    "dev": "HOST=0.0.0.0 bun run prebuild && vinxi dev",
+    "dev": "bun run prebuild && vinxi dev --host",
     "build": "vinxi build",
     "db:generate": "drizzle-kit generate",
     "preview": "bun .output/server/index.mjs",

@@ -6,6 +6,7 @@ const host = process.env.TAURI_DEV_HOST
 export default defineConfig({
   ssr: false,
   server: {
+    preset: 'static',
     routeRules: {
       '/**': { headers: { 'Cross-Origin-Embedder-Policy': 'require-corp', 'Cross-Origin-Opener-Policy': 'same-origin' } },
     },
@@ -26,9 +27,9 @@ export default defineConfig({
       watch: {
         ignored: ['**/src-tauri/**'],
       },
-      optimizeDeps: {
-        exclude: ['sqlocal'],
-      },
+    },
+    optimizeDeps: {
+      exclude: ['sqlocal'],
     },
   },
 })

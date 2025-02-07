@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "identifier": "com.wasmtest.dev",
   "build": {
-    "frontendDist": "../.vinxi/build/client/_build",
-    "devUrl": "http://0.0.0.0:3000",
+    "frontendDist": "../.output/public",
+    "devUrl": "http://localhost:3000",
     "beforeDevCommand": "bun run dev",
     "beforeBuildCommand": "bun run build"
   },
